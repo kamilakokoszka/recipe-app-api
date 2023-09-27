@@ -6,7 +6,7 @@ from decimal import Decimal
 from django.test import TestCase
 from django.contrib.auth import get_user_model
 
-from app.core import models
+from ..models import Recipe
 
 
 class ModelTests(TestCase):
@@ -57,7 +57,7 @@ class ModelTests(TestCase):
             'test@example.com',
             'testpass123',
         )
-        recipe = models.Recipe.objects.create(
+        recipe = Recipe.objects.create(
             user=user,
             title='Sample recipe name',
             time_minutes=5,
